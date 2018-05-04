@@ -215,7 +215,16 @@ var hexToUtf8 = function(hex) {
         // }
     }
 
-    return utf8.decode(str);
+    var returnValue;
+    try {
+      returnValue = utf8.decode(str);
+    }
+    catch(e) {
+      returnValue = `slowcryptokitty`;
+    }
+    finally {
+      return returnValue;
+    }
 };
 
 
